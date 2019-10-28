@@ -1,0 +1,75 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<div class="container">
+  <form action="">
+    <div class="row">
+      <h2 style="text-align:center">Login Here</h2>
+      <div class="vl">
+        <span
+          class="vl-innertext"
+          style="background-color: wheat; border: 3px solid rgba(0,0,0,0.4);"
+          ><b>OR</b></span
+        >
+      </div>
+
+      <div class="col col-left">
+        <a class="fb btn"
+          ><i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a class="google btn" (click)="authService.GoogleLogin()"
+          ><i class="fa fa-google fa-fw"> </i> Login with Google+
+        </a>
+      </div>
+
+      <div class="col col-right">
+        <div class="hide-md-lg">
+          <p>Or Login Manually</p>
+        </div>
+
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter Email Id"
+          required
+          #username
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          required
+          #password
+        />
+        <input
+          type="submit"
+          value="Login"
+          (click)="
+            authService.LogInWithEmailAndPassword(
+              username.value,
+              password.value
+            )
+          "
+        />
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="col" style="float: left;">
+  <button
+    type="submit"
+    class="btn btn-primary"
+    style="width: 50%; margin-left: 40%;"
+    (click)="goToSignUpPage()"
+  >
+    Sign Up
+  </button>
+</div>
+<div class="col" style="float: right;">
+  <button type="submit" class="btn btn-warning" style="width: 50%;">
+    Forgot Password
+  </button>
+</div>

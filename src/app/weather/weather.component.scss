@@ -1,0 +1,109 @@
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover,
+.form-control-borderless:active,
+.form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.example-card {
+  width: 70%;
+  border-width: 2px;
+  overflow: auto;
+  background-color: wheat;
+  display: none;
+  transform: translateX(20%);
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+    .card {
+      padding: 0 10px;
+    }
+  }
+}
+
+#heading {
+  width: 100%;
+  display: inline-flex;
+  .icon-img {
+    width: 50%;
+    float: left;
+  }
+  .text {
+    width: 50%;
+    float: right;
+  }
+}
+
+.pos {
+  width: 100%;
+  display: inline-flex;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  .lat {
+    width: 50%;
+
+    float: right;
+  }
+  .lon {
+    width: 50%;
+    float: left;
+  }
+}
+
+.info-card {
+  float: left;
+  min-height: 140px;
+  margin: 1.2%;
+}
+
+#example-header-image {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 804px) {
+  .info-card {
+    width: 97%;
+    margin-right: 10px;
+    min-height: 140px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #daynight {
+    height: 20%;
+  }
+  .example-card {
+    width: 80%;
+    transform: translateX(0%);
+    margin: 0% 10%;
+  }
+  .info-card {
+    width: 97%;
+    margin: 3% 1.5%;
+  }
+}
+
+@media screen and (min-width: 804px) {
+  .example-card {
+    width: 50%;
+    transform: translateX(50%);
+  }
+  .info-card {
+    width: 27%;
+    margin-right: 6px;
+    min-height: 140px;
+  }
+  .first-card {
+    width: 36%;
+    margin-right: 6px;
+    min-height: 140px;
+  }
+}

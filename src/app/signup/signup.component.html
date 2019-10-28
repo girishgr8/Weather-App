@@ -1,0 +1,36 @@
+<form
+  style="width: 60%; margin: 2% 20%; border: 5px solid rgba(0, 0, 0, 0.3); padding: 8%; border-radius: 5px;"
+>
+  <h4 style="margin-top: 0%; text-align: center;">Sign Up Form</h4>
+  <div class="form-group">
+    <label for="username">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      #username
+      aria-describedby="emailHelp"
+      placeholder="Enter Email address...."
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    >
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      #password
+      placeholder="Enter Password...."
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="
+      authService.SignUpWithEmailAndPassword(username.value, password.value)
+    "
+  >
+    Submit
+  </button>
+</form>

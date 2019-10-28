@@ -1,0 +1,169 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+  crossorigin="anonymous"
+/>
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm" (submit)="doNotRefreshPage($event)">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <div class="col">
+            <input
+              class="form-control form-control-lg form-control-borderless"
+              type="search"
+              placeholder="Enter City Name....."
+              #city
+            />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button
+              class="btn btn-lg btn-success"
+              type="submit"
+              (click)="cityEntered(city.value)"
+            >
+              Search
+            </button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br />
+<mat-card class="example-card" id="example-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="example-header-image"
+      id="example-header-image"
+    ></div>
+    <mat-card-title>{{ City }}</mat-card-title>
+    <mat-card-subtitle
+      ><b>{{ Weather }}</b></mat-card-subtitle
+    >
+    <div class="pos">
+      <div class="lon">Longitude: {{ Longitude }}°</div>
+      <div class="lat">Latitude: {{ Latitude }}°</div>
+    </div>
+  </mat-card-header>
+  <img mat-card-image src="{{ DayOrNight }}" id="daynight" />
+  <mat-card-content>
+    <div class="column">
+      <div class="card" style="padding: 1%; margin-bottom: 5%;">
+        <div id="heading">
+          <div class="icon-img">
+            <img
+              src="{{ SunriseIcon }}"
+              style="width: 40px; height: 40px; padding-left: 5px;"
+            />
+          </div>
+          <div class="text" style="padding-top: 10px"><b>Sunrise</b></div>
+          <br />
+        </div>
+        {{ Sunrise }}
+      </div>
+    </div>
+    <div class="column">
+      <div class="card" style="padding: 1%; margin-bottom: 5%;">
+        <div id="heading">
+          <div class="icon-img">
+            <img
+              src="{{ SunsetIcon }}"
+              style="width: 40px; height: 40px; padding-left: 5px"
+            />
+          </div>
+          <div class="text" style="padding-top: 10px"><b>Sunset</b></div>
+          <br />
+        </div>
+        {{ Sunset }}
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card class="info-card first-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div id="heading">
+          <div class="icon-img" style="width: 25%;">
+            <i
+              class="fas fa-thermometer-half"
+              style="font-size: 20px; padding-left: -10px;"
+            ></i>
+          </div>
+          <div class="text" style="font-size: 15px; width: 75%;">
+            Temperature
+          </div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h6 style="font-size: 14px;">Current: {{ Current }}° C</h6>
+      <h6 style="font-size: 14px;">Minimum: {{ Minimum }}° C</h6>
+      <h6 style="font-size: 14px;">Maximum: {{ Maximum }}° C</h6>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="info-card">
+    <mat-card-header>
+      <mat-card-title style="font-size: 15px;">
+        <div id="heading">
+          <div class="icon-img" style="width: 30%;">
+            <img
+              src="../assets/icons/humidity.svg"
+              alt=""
+              srcset=""
+              style="height: 23px; width: 23px; padding-left: -5px; padding-right: 5px;"
+            />
+          </div>
+          <div class="text" style="width: 70%;">Humidity</div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h6 style="font-size: 14px;">Current: {{ Humidity }}%</h6>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="info-card">
+    <mat-card-header>
+      <mat-card-title style="font-size: 15px;">
+        <div id="heading">
+          <div class="icon-img">
+            <img
+              src="../assets/icons/wind.svg"
+              alt=""
+              srcset=""
+              style="height: 20px; width: 20px; padding-left: -2px; padding-right: 5px;"
+            />
+          </div>
+          <div class="text">Wind</div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h6 style="font-size: 14px;">Speed: {{ Speed }} m/s</h6>
+      <h6 style="font-size: 14px;">Degree: {{ Degree }}°</h6>
+    </mat-card-content>
+  </mat-card>
+  <br />
+  <br />
+</mat-card>
+
+<router-outlet></router-outlet>
