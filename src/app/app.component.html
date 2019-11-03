@@ -1,40 +1,27 @@
-<!--
-<nav>
-  <a routerLink="login" (click)="authService.GoogleLogin()">Login</a>
-  <a routerLink="signup">Signup</a>
-  <a routerLink="" (click)="authService.GoogleLogout()">LogOut</a>
-</nav>
--->
-
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-<nav class="navbar navbar-inverse" style="border-radius: 0px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" style="color: white;">WeatherNow</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li id="signup">
-        <a routerLink="signup"
-          ><span class="glyphicon glyphicon-user"></span> Sign Up
-        </a>
-      </li>
-      <li id="login">
-        <a routerLink="login"
-          ><span class="glyphicon glyphicon-log-in"></span> Login
-        </a>
-      </li>
-      <li id="logout-btn">
-        <a (click)="authService.GoogleLogout()"
-          ><span class="glyphicon glyphicon-log-out"></span>LogOut</a
-        >
-      </li>
-    </ul>
-  </div>
+<nav>
+	<div class="toggle">
+		<i class="fa fa-bars" aria-hidden="true" id="menu"></i>
+	</div>
+	<ul>
+		<li id="signup"><a routerLink="signup"><span><i class="fa fa-user-plus" aria-hidden="true" style="margin:0 10px; font-size: 22px"></i></span> Sign Up </a></li>
+		<li id="login"><a routerLink="login"><span><i class="fa fa-sign-in" aria-hidden="true" style="margin:0 10px; font-size: 22px"></i></span> Log In </a></li>
+		<li id="logout-btn"><a (click)="authService.GoogleLogout()" ><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+	</ul>	
 </nav>
+<!--
+<div class="container">
+	<div class="row">
+		<div class="jumbotron">
+			<h2 style="text-transform: uppercase; text-align: center; font-weight: bold;">Weather App</h2><br>
+			<p>Sign Up or Login to know weather about any city...</p>
+		</div>
+	</div>
+</div>
+-->
+
 <router-outlet></router-outlet>

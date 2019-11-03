@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  width: 70%;
+  width: 75%;
   position: relative;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -27,6 +27,7 @@ input,
   line-height: 20px;
   text-decoration: none;
 }
+
 
 input:hover,
 .btn:hover {
@@ -77,6 +78,10 @@ input[type='submit']:hover {
   margin-top: 6px;
 }
 
+.newcol{
+	margin-top: 10px;
+}
+
 .row:after {
   content: '';
   display: table;
@@ -112,10 +117,14 @@ input[type='submit']:hover {
   border-radius: 0px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 720px) {
   .col {
     width: 100%;
     margin-top: 0;
+  }
+  .newcol{
+	margin-top: 10px;
+	text-align: center;
   }
   .vl {
     display: none;
